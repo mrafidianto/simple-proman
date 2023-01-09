@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mongo:
+    container_name: mongo-simple-proman
+    restart: always
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_DATABASE: simple-proman
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27017:27017
